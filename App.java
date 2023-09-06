@@ -16,6 +16,6 @@ public class App {
         } else {
             results = number1 * number2;
         }
-        System.out.println("The results is " + results);
+        System.out.println(number1 + input + number1 + "=" + results);
             }
 }
