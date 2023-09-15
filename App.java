@@ -1,8 +1,5 @@
 import java.util.Scanner;  // Import the Scanner class
 import java.util.ArrayList; // import the ArrayList class
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 public class App {
     public static void main(String[] args) {
@@ -30,7 +27,7 @@ public class App {
             i++;
           }
           while (i < count);
-          
+
         switch(operation) {
             case "+":
                 Addition myAdd = new Addition(); // only need to create this obj if + op 
