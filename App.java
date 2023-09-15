@@ -1,5 +1,5 @@
 import java.util.Scanner;  // Import the Scanner class
-//import java.util.ArrayList; // import the ArrayList class
+import java.util.ArrayList; // import the ArrayList class
 
 public class App {
     public static void main(String[] args) {
@@ -12,13 +12,12 @@ public class App {
         int results;
         System.out.println("How many numbers?");
         int count = scanner.nextInt();
-        //ArrayList<Integer> myNumbers = new ArrayList<Integer>();
-        int[] myNumb = new int[count]; 
+        ArrayList<Integer> myNumb = new ArrayList<Integer>();
+        //int[] myNumb = new int[count]; 
         for (int i = 0; i < count; i++) {
             System.out.println("Enter number " + (i+1) + ":");
             int number = scanner.nextInt();
-            myNumb[i] = number;
-            //myNumber.set(i, number);
+            myNumb.add(number);
           }
 
         switch(operation) {

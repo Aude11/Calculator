@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface Calculation {
-    int calculate(int[] number);
+    int calculate(ArrayList<Integer> number);
 }
