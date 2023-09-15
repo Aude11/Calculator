@@ -1,5 +1,8 @@
 import java.util.Scanner;  // Import the Scanner class
 import java.util.ArrayList; // import the ArrayList class
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class App {
     public static void main(String[] args) {
@@ -12,17 +15,25 @@ public class App {
         int results;
         System.out.println("How many numbers?");
         int count = scanner.nextInt();
+        int i = 0;
+        String userInput;
         ArrayList<Integer> myNumb = new ArrayList<Integer>();
-        //int[] myNumb = new int[count]; 
-        for (int i = 0; i < count; i++) {
+        int number;
+          do {
             System.out.println("Enter number " + (i+1) + ":");
-            int number = scanner.nextInt();
+            userInput = scanner.next();
+            if (userInput.equals("done")) {
+                break;
+            }
+            number = Integer.parseInt(userInput);
             myNumb.add(number);
+            i++;
           }
-
+          while (i < count);
+          
         switch(operation) {
             case "+":
-                Addition myAdd = new Addition(); // I only need to create this obj if + op 
+                Addition myAdd = new Addition(); // only need to create this obj if + op 
                 results = myAdd.calculate(myNumb);
                 break;
             case "-":
