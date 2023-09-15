@@ -48,6 +48,9 @@ public class AppFile {
                 Multiplication myMultiplication = new Multiplication();
                 results = myMultiplication.calculate(myNumb);
                 break;
+            case "/":
+                Division myDivision = new Division();
+                results = myDivision.calculate(myNumb);
             default:
                 System.out.println("Invalid operation");
                 results = 0;
