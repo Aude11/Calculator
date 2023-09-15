@@ -5,17 +5,30 @@ public class App {
         System.out.println("Welcome to the calculator!"); // Display the string.
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter first number, enter second number and an operation to perform on them: +, - or *");
-        double number1 = scanner.nextDouble();
-        double number2 = scanner.nextDouble();
-        String input = scanner.next();
-        double results;
-        if (input.equals("+")) { // comparing two strings use equals method as two different objs with same value
-        results = number1 + number2;
-        } else if (input.equals("-")) {
-            results = number1 - number2;
-        } else {
-            results = number1 * number2;
-        }
-        System.out.println(number1 + input + number1 + "=" + results);
+        int number1 = scanner.nextInt();
+        int number2 = scanner.nextInt();
+        String operation = scanner.next();
+        int results;
+
+        switch(operation) {
+            case "+":
+                Addition myAdd = new Addition(); // I only need to create this obj if + op 
+                results = myAdd.calculate(number1, number2);
+                break;
+            case "-":
+                Substraction mySubtraction = new Substraction(); 
+                results = mySubtraction.calculate(number1, number2);
+                break;
+            case "*":
+                Multiplication myMultiplication = new Multiplication();
+                results = myMultiplication.calculate(number1, number2);
+                break;
+            default:
+                System.out.println("Invalid operation");
+                number1 = 0;
+                number2 = 0;
+                results = 0;
+          }
+        System.out.println(number1 + " " + operation + " " + number2 + " " + "=" + " " + results);
             }
 }
