@@ -1,34 +1,43 @@
 import java.util.Scanner;  // Import the Scanner class
+//import java.util.ArrayList; // import the ArrayList class
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Welcome to the calculator!"); // Display the string.
+        String paternRepeated = "=";
+        System.out.println(paternRepeated.repeat(30)); // Display the string.
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter first number, enter second number and an operation to perform on them: +, - or *");
-        int number1 = scanner.nextInt();
-        int number2 = scanner.nextInt();
+        System.out.println("Choose an operation:");
         String operation = scanner.next();
         int results;
+        System.out.println("How many numbers?");
+        int count = scanner.nextInt();
+        //ArrayList<Integer> myNumbers = new ArrayList<Integer>();
+        int[] myNumb = new int[count]; 
+        for (int i = 0; i < count; i++) {
+            System.out.println("Enter number " + (i+1) + ":");
+            int number = scanner.nextInt();
+            myNumb[i] = number;
+            //myNumber.set(i, number);
+          }
 
         switch(operation) {
             case "+":
                 Addition myAdd = new Addition(); // I only need to create this obj if + op 
-                results = myAdd.calculate(number1, number2);
+                results = myAdd.calculate(myNumb);
                 break;
             case "-":
                 Substraction mySubtraction = new Substraction(); 
-                results = mySubtraction.calculate(number1, number2);
+                results = mySubtraction.calculate(myNumb);
                 break;
             case "*":
                 Multiplication myMultiplication = new Multiplication();
-                results = myMultiplication.calculate(number1, number2);
+                results = myMultiplication.calculate(myNumb);
                 break;
             default:
                 System.out.println("Invalid operation");
-                number1 = 0;
-                number2 = 0;
                 results = 0;
           }
-        System.out.println(number1 + " " + operation + " " + number2 + " " + "=" + " " + results);
+        System.out.println("Results = "+ results);
             }
 }
