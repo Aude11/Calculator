@@ -52,6 +52,11 @@ public class AppFile {
                 System.out.println("Invalid operation");
                 results = 0;
           }
-        System.out.println("Results = "+ results);
+        String data = "Results = " + results;
+        System.out.println(data);
+        Loggin myResults = new Loggin("results.txt");
+        myResults.createFile();
+        myResults.writeOnFile(data);
             }
+        
 }
