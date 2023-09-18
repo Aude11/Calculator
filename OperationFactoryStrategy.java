@@ -1,25 +1,22 @@
+import java.util.ArrayList;
+
 public class OperationFactoryStrategy {
-    public int performOperation(String operator) {
-        int results;
+    public int performOperation(String operator, ArrayList<Integer> myNumb) {
         switch(operator) {
             case "+":
                 Addition myAdd = new Addition(); // only need to create this obj if + op 
-                results = myAdd.calculate(myNumb);
-                break;
+                return myAdd.calculate(myNumb);
             case "-":
                 Substraction mySubtraction = new Substraction(); 
-                results = mySubtraction.calculate(myNumb);
-                break;
+                return mySubtraction.calculate(myNumb);
             case "*":
                 Multiplication myMultiplication = new Multiplication();
-                results = myMultiplication.calculate(myNumb);
-                break;
+                return myMultiplication.calculate(myNumb);
             case "/":
                 Division myDivision = new Division();
-                results = myDivision.calculate(myNumb);
+                return myDivision.calculate(myNumb);
             default:
                 System.out.println("Invalid operation");
-                results = 0;
           }
     }
 }
